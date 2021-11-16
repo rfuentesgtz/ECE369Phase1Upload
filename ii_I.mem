@@ -1,0 +1,11 @@
+20080000	// addi	$8, $0, 0  initialize begin
+20090000	// addi	$9, $0, 0 
+200a0000	// addi	$10, $0, 0  initialize end
+20080008	// addi	$8, $0, 8  ii test begin
+210a0000	// addi	$10, $8, 0  
+20080000	// addi	$8, $0, 0  initialize begin
+20090000	// addi	$9, $0, 0  
+200a0000	// addi	$10, $0, 0 
+20080008	// addi	$8, $0, 8  ixi test begin
+20090009	// addi	$9, $0, 9  
+210a0000	// addi	$10, $8, 0  
