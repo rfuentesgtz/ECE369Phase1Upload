@@ -108,9 +108,9 @@ module Top1(Clk, Reset, out7, en_out);
     
     //Call Register File
     wire RegWrite_WB; // RegWrite signal from write back stage, tells us whether we write or not
-    wire [31:0] ReadData1_DEC, ReadData2_DEC; //These guys will hold the outputs of the register, readData1 = GPR[rs], readData2 = GPR[rt]
+    wire [31:0] ReadData1_DEC, ReadData2_DEC, v0, v1; //These guys will hold the outputs of the register, readData1 = GPR[rs], readData2 = GPR[rt]
     RegisterFile Registers(Instruction_DEC[25:21], Instruction_DEC[20:16], RegDst_WB, LinkOut, RegWrite_WB, 
-                          ClkOut, ReadData1_DEC, ReadData2_DEC); 
+                          ClkOut, ReadData1_DEC, ReadData2_DEC, v0, v1); 
                           
     //HILO REGISTER STUFF
     wire[63:0] ALU64Result_WB; //ALU64 Result from stage 5
