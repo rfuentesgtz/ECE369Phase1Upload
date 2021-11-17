@@ -48,7 +48,7 @@
 // to allow for data multiplexing and setup time.
 ////////////////////////////////////////////////////////////////////////////////
 
-module RegisterFile(ReadRegister1, ReadRegister2, WriteRegister, WriteData, RegWrite, Clk, ReadData1, ReadData2);
+module RegisterFile(ReadRegister1, ReadRegister2, WriteRegister, WriteData, RegWrite, Clk, ReadData1, ReadData2, v0 ,v1);
 	//Input declaration
 	input[4:0] ReadRegister1;
 	input[4:0] ReadRegister2;
@@ -58,6 +58,8 @@ module RegisterFile(ReadRegister1, ReadRegister2, WriteRegister, WriteData, RegW
 	input Clk;
 	output reg [31:0] ReadData1;
 	output reg [31:0] ReadData2;
+	output reg [31:0] v0;
+	output reg [31:0] v1;
 	integer i;
 	
 	//Memory Declaraton
@@ -73,6 +75,8 @@ module RegisterFile(ReadRegister1, ReadRegister2, WriteRegister, WriteData, RegW
 	begin
 	   ReadData1 <= Registers[ReadRegister1];
 	   ReadData2 <= Registers[ReadRegister2];
+		v0 <= Registers[2];
+		v1 <= Registers[3];
 	end
 	
 	//Write process
